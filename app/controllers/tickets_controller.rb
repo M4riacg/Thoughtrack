@@ -46,8 +46,9 @@ class TicketsController < ApplicationController
     @ticket = current_user.tickets.new(ticket_params)
     @ticket.status_id = 1;
     if(current_user.level_authority < 2)
-      @ticket.priority_id = 1;
       @ticket.tecnic_id = User.where(level_authority: 1, admin_level_authority: true).pluck(:id).first
+      @ticket.priority_id = 5;
+      @ticket.tecnic_id = User.where(level_authority: 2, admin_level_authority: true).pluck(:id).first
     else
       @ticket.level_authority = User.find(@ticket.tecnic_id).level_authority;
     end
