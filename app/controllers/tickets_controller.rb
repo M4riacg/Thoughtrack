@@ -9,8 +9,11 @@ class TicketsController < ApplicationController
     if params[:search]
       @tickets = Ticket.search(params[:search]).order("created_at DESC")
     else
-      @tickets = Ticket.where("status_id != ? AND (user_id = ? OR tecnic_id = ?)", 3,current_user.id,current_user).order(sort_column + ' ' + sort_direction)
-      #@tickets = Ticket.where("(user_id = ? OR tecnic_id = ?)",current_user.id,current_user).order(sort_column + ' ' + sort_direction)
+      if(current_user.level_authority < 2)
+        @tickets = Ticket.where("status_id != ? AND (user_id = ? OR tecnic_id = ?)", 3,current_user.id,current_user).order(sort_column + ' ' + sort_direction)
+      else
+        @tickets = Ticket.all
+      end
     end
   end
 
@@ -46,11 +49,11 @@ class TicketsController < ApplicationController
     @ticket = current_user.tickets.new(ticket_params)
     @ticket.status_id = 1;
     if(current_user.level_authority < 2)
-      @ticket.tecnic_id = User.where(level_authority: 1, admin_level_authority: true).pluck(:id).first
       @ticket.priority_id = 5;
       @ticket.tecnic_id = User.where(level_authority: 2, admin_level_authority: true).pluck(:id).first
+      @ticket.level = 2;
     else
-      @ticket.level_authority = User.find(@ticket.tecnic_id).level_authority;
+      @ticket.level = User.find(@ticket.tecnic_id).level_authority;
     end
 
     respond_to do |format|

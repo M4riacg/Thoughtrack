@@ -63,14 +63,22 @@
   </div>
 <%if(current_user.level_authority < 2)%>
   <script type="text/javascript">
-  $('#edit_button').hide();
-  $('#new_comment').hide();
-  $('#text_new_comment').hide();
-  $('#upgrade_button').hide();
-  $('#more_priority_button').hide();
-  $('#less_priority_button').hide();
-  $('#proc_button').hide();
-  $('#close_button').hide();
+    $('#edit_button').hide();
+    $('#new_comment').hide();
+    $('#text_new_comment').hide();
+    $('#upgrade_button').hide();
+    $('#more_priority_button').hide();
+    $('#less_priority_button').hide();
+    $('#proc_button').hide();
+    $('#close_button').hide();
+  </script>
+  <%end%>
+
+  <%if(current_user.id != @ticket.tecnic_id)%>
+  <script type="text/javascript">
+    $('#more_priority_button').hide();
+    $('#less_priority_button').hide();
+    $('#close_button').hide();
   </script>
   <%end%>
 
