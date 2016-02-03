@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
       if(current_user.level_authority < 2)
         @tickets = Ticket.where("status_id != ? AND (user_id = ? OR tecnic_id = ?)", 3,current_user.id,current_user).order(sort_column + ' ' + sort_direction)
       else
-        @tickets = Ticket.all
+        @tickets = Ticket.where("status_id != ?", 3)
       end
     end
   end
