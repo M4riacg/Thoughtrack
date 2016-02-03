@@ -52,7 +52,7 @@
 
 <div class="field ">
     <%@ticket.comments.each do |comment|%>
-    <div class="form-control" style="font-size: 15px;"> <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
+    <div style="font-size: 15px;"> <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
   </br>
     <%end%>
     <h2 class="entry-content center" id="text_new_comment"> New Comment</h2>
@@ -123,3 +123,5 @@
     $('#proc_button').hide();
   </script>
   <%end%>
+
+</br> </br>
