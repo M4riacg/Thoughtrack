@@ -1,0 +1,25 @@
+<i class="fa fa-chevron-left fa-lg back left"> <%= link_to 'Back', :back %></i>
+
+<h1 class="entry-title center">Priority <%= @priority.name %></h1>
+
+<div class="col-lg-3 center-block">
+
+	<p>
+	  <strong>Level:</strong>
+	  <%= @priority.level %>
+	</p>
+
+<div class="field">	
+	<div class= "form-group string optional priority_color">
+		  <label class="string optional control-label">Color:</label>
+		<div class=" minicolors minicolors-theme-maria minicolors-position-bottom minicolors-position-left minicolors-focus">
+			<span class="minicolors-swatch minicolors-sprite minicolors-input-swatch">
+				<span class="minicolors-swatch-color" style="background-color: <%=@priority.color%>;"></span>
+			</span>
+		</div>
+	</div>
+</div>
+
+</div>
+
+

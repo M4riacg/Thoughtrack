@@ -1,0 +1,36 @@
+<%= form_for(@priority) do |f| %>
+  <% if @priority.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@priority.errors.count, "error") %> prohibited this priority from being saved:</h2>
+
+      <ul>
+      <% @priority.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-lg-3 center-block">
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control", :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :level %><br>
+    <%= f.text_field :level, class: "form-control", :disabled=>true %>
+  </div>
+
+  <div class="field">  
+    <%= simple_form_for @priority do |f| %>
+      <%= f.input :color, as: :minicolors, input_html: {
+        data: { minicolors: {theme: :bootstrap, positions: :right}}
+      } %>
+    <% end %>
+  </div>
+
+  <div class="field center" style ="padding-top: 2%;">
+  <%= f.submit "Submit", class:"btn background-turquesa btn-md center margin-bottom-page font-size-16"%>
+  </div>
+</div>
+<% end %>

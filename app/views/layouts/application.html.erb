@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GesIn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://labs.abeautifulsite.net/jquery-minicolors/jquery.minicolors.js"></script>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body>
+  <% if user_signed_in? %>
+  <header class= "headerfix" data-role="header">
+    <div class="wrapper">   
+        <div class = "logo">  
+            <%= link_to "GesIn", home_index_path%>
+        </div> 
+        <nav> 
+        <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.name%></strong>
+              <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %>
+              <%= link_to "log out", destroy_user_session_path, method: :get %>
+        <% end %>
+        </nav>
+    </div>
+  </header>
+  <%end%>
+
+
+<div id= "content" class= "wrapper" data-role="main"> 
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+    <%= yield %>
+</div>
+
+<footer>
+</footer>
+<script type="text/javascript">$('#priority_color').minicolors({theme: 'bootstrap'});</script>
+
+</body>
+</html>
