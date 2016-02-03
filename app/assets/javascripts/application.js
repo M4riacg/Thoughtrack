@@ -17,5 +17,3 @@
 //= require jquery.minicolors.simple_form
 //= require turbolinks
 //= require_tree .
-
-$('edit_button').hide()

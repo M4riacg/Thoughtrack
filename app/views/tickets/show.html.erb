@@ -5,7 +5,7 @@
      <h1 class="entry-title col-md-9"><%= @ticket.title %></h1>
      <div class=" col-md-3 right"> 
       <button type="button" class="btn background-turquesa btn-md center margin-bottom-page" style="margin-top: 10%; font-size: 16px;" id="edit_button">
-        <%= link_to 'Edit Ticket', edit_ticket_path(@ticket) if current_user.app_admin?%> 
+        <%= link_to 'Edit Ticket', edit_ticket_path(@ticket)%> 
       </button>
     </div>
   </div>
@@ -14,8 +14,8 @@
         <p><strong class="entry-content-gray">Open date:</strong> <label style="font-size: 16px;"><%=@ticket.created_at.strftime("%d %B %Y")%></label></p>
         <strong class="entry-content-gray">Responsible:</strong> <label style="font-size: 16px;"><%= @tecnic.name%></label>
         <b style="padding-left: 10px;"></b>
-        <button class="btn background-turquesa btn-md center" style="font-size: 16px;">
-        <%= link_to 'Upgade', controller: "tickets", action: "upgrade", id: @ticket if current_user.app_admin? %>
+        <button class="btn background-turquesa btn-md center" style="font-size: 16px;" id="upgrade_button">
+        <%= link_to 'Upgade', controller: "tickets", action: "upgrade", id: @ticket%>
       </button>
     </br></br>
 
@@ -23,24 +23,24 @@
         <strong class="entry-content-gray">Priority:</strong><label style="font-size: 16px;"><%= @priority.name%></label>
               <b style="padding-left: 10px;"></b>
 
-      <button type="button" class="btn btn-default btn-md" style="font-size: 16px;">
-        <%= link_to '+ Priority', controller: "tickets", action: "morePrio", id: @ticket if current_user.app_admin? %>
+      <button type="button" class="btn btn-default btn-md" style="font-size: 16px;" id="more_priority_button">
+        <%= link_to '+ Priority', controller: "tickets", action: "morePrio", id: @ticket%>
       </button>
       <b style="padding-left: 10px;"></b>
-      <button type="button" class="btn btn-default btn-md" style="font-size: 16px;">
-        <%= link_to '- Priority', controller: "tickets", action: "lessPrio", id: @ticket if current_user.app_admin? %>
+      <button type="button" class="btn btn-default btn-md" style="font-size: 16px;" id="less_priority_button">
+        <%= link_to '- Priority', controller: "tickets", action: "lessPrio", id: @ticket%>
       </button>
 
     </br></br>
         <strong class="entry-content-gray">Status: </strong> <label style="font-size: 16px;"><%= @status.name%></label>
       <b style="padding-left: 10px;"></b>
 
-      <button type="button" class="btn btn-warning btn-md" style="font-size: 16px;">
-        <%= link_to 'Processing Ticket', controller: "tickets", action: "proceso", id: @ticket if current_user.app_admin? %>
+      <button type="button" class="btn btn-warning btn-md" style="font-size: 16px;" id="proc_button">
+        <%= link_to 'Processing Ticket', controller: "tickets", action: "proceso", id: @ticket%>
       </button>
       <b style="padding-left: 10px;"></b>
-      <button type="button" class="btn btn-danger btn-md" style="font-size: 16px;">
-        <%= link_to 'Close Ticket', controller: "tickets", action: "finalized", id: @ticket if current_user.app_admin? %>
+      <button type="button" class="btn btn-danger btn-md" style="font-size: 16px;"  id="close_button">
+        <%= link_to 'Close Ticket', controller: "tickets", action: "finalized", id: @ticket%>
       </button>
       
       </br></br>
@@ -56,14 +56,21 @@
     <div class="form-control" style="font-size: 15px;"> <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
   </br>
     <%end%>
-    <h2 class="entry-content center"> New Comment</h2>
+    <h2 class="entry-content center" id="text_new_comment"> New Comment</h2>
 
-    <%=render "comments/form" if current_user.app_admin?%>
+    <%=render "comments/form"%>
 </div>
   </div>
 <%if(current_user.level_authority < 2)%>
   <script type="text/javascript">
   $('#edit_button').hide();
+  $('#new_comment').hide();
+  $('#text_new_comment').hide();
+  $('#upgrade_button').hide();
+  $('#more_priority_button').hide();
+  $('#less_priority_button').hide();
+  $('#proc_button').hide();
+  $('#close_button').hide();
   </script>
   <%end%>
 

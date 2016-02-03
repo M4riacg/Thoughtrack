@@ -20,12 +20,12 @@
     <%= f.text_area :content, placeholder:"Description", style: "height: 250px ", class:"form-control"%>
   </div>
 
-  <div class="field left" style="padding-top: 20px; padding-bottom: 10px;">
-  Order to:
+  <div class="field left" style="padding-top: 20px; padding-bottom: 10px;" id="field_responsible">
+  Responsible:
     <%= f.select :tecnic_id,   User.where("level_authority <= ? and admin_level_authority = ?", current_user.level_authority, true).collect {|p| [ p.name, p.id ] } %>
   </div>
 
-  <div class="field left" style="padding-top: 10px; padding-bottom: 20px;">
+  <div class="field left" style="padding-top: 10px; padding-bottom: 20px;" id="field_priority">
   Priority:
     <%= f.select :priority_id,  Priority.all.collect {|p| [ p.name, p.id ] } %>
   </div>
@@ -35,3 +35,11 @@
   </div><% end %>
 </form>
 </div>
+
+<%if(current_user.level_authority < 3)%>
+  <script type="text/javascript">
+  $('#field_responsible').hide();
+  $('#field_priority').hide();
+  </script>
+
+<%end%>
