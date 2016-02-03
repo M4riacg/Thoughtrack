@@ -24,13 +24,6 @@ class TicketsController < ApplicationController
     @priority = Priority.find(@ticket.priority_id)
     @status = Status.find(@ticket.status_id)
     @comment = Comment.new
-    puts "tickeeeet"
-    puts @ticket.level
-    @u = User.where(:level_authority => 3).pluck(:id).first
-
-
-    puts "usuuuuu"
-    puts @u
   end
 
   # GET /tickets/new
