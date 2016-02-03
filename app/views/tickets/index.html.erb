@@ -15,7 +15,7 @@
     <% group.compact.each do |ticket| %>
       <div class="col-md-4">
         <div class="well" style="background: <%=  @priority.find(ticket.priority_id).color%>; 
-          <%if ticket.tecnic_id == current_user.id%> border: 1px solid gray; <%end%>" >
+          <%if ticket.tecnic_id == current_user.id%> border: 2px solid gray; <%end%>" >
         <h2 class="entry-subtitle"><%= link_to ticket.id, ticket %> - <%= link_to ticket.title, ticket %></h2>
         <p class="content-ticket"><%= ticket.content %> <p>
       </div>
