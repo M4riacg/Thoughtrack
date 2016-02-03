@@ -1,5 +1,4 @@
 <i class="fa fa-chevron-left fa-lg back left"> <%= link_to 'Back', tickets_path %></i>
-<!--%= debug @ticket %-->
   <div class="ticket-size">
     <div class="row">
      <h1 class="entry-title col-md-9"><%= @ticket.title %></h1>
@@ -95,13 +94,13 @@
   </script>
   <%end%>
 
-  <%if(@ticket.priority_id == 5)%>
+  <%if(@ticket.priority_id == 1)%>
   <script type="text/javascript">
     $('#more_priority_button').hide();
   </script>
   <%end%>
 
-  <%if(@ticket.priority_id == 1)%>
+  <%if(@ticket.priority_id == 5)%>
   <script type="text/javascript">
     $('#less_priority_button').hide();
   </script>
