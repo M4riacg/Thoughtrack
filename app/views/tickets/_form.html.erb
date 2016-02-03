@@ -22,7 +22,7 @@
 
   <div class="field left" style="padding-top: 20px; padding-bottom: 10px;" id="field_responsible">
   Responsible:
-    <%= f.select :tecnic_id,   User.where("level_authority <= ?", current_user.level_authority).collect {|p| [ p.name, p.id ] } %>
+    <%= f.select :tecnic_id,   User.where("level_authority <= ? and level_authority > ?", current_user.level_authority, 1).collect {|p| [ p.name, p.id ] } %>
   </div>
 
   <div class="field left" style="padding-top: 10px; padding-bottom: 20px;" id="field_priority">
