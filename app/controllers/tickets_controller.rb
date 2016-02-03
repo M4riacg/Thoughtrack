@@ -122,18 +122,19 @@ class TicketsController < ApplicationController
   end
 
   def upgrade
-    if( @ticket.level_authority > 1 ||  @ticket.level_authority < 3)
-      if ( User.where(level_authority: @ticket.level_authority, admin_level_authority: true).pluck(:id).first.nil?)
-        @ticket.update_attribute(:tecnic_id, User.where(level_authority: 3, admin_level_authority: true).pluck(:id).first)
-        @ticket.update_attribute(:level_authority, @ticket.level_authority+1)
+    if( @ticket.level > 1 ||  @ticket.level < 3)
+      next_admin = User.where(level_authority: @ticket.level+1, admin_level_authority: true).pluck(:id).first
+      if ( next_admin.nil? )
+        respond_to do |format|
+        format.html { redirect_to @ticket, alert: 'There is impossible upgrade.' } 
+        end
+      else
+        @ticket.update_attribute(:tecnic_id, User.where(level_authority: @ticket.level+1, admin_level_authority: true).pluck(:id).first)
+        @ticket.update_attribute(:level, @ticket.level+1)
 
         respond_to do |format|
           format.html { redirect_to @ticket, notice: 'Ticket was successfully upgrade.' }
         end
-      else
-      respond_to do |format|
-      format.html { redirect_to @ticket, alert: 'There is impossible upgrade.' } 
-      end
     end
     else
     respond_to do |format|

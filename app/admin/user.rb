@@ -1,14 +1,14 @@
 ActiveAdmin.register User do
-  permit_params :name, :work_phone, :admin, :email, :password, :password_confirmation, :level, :admin_level
+  permit_params :name, :work_phone, :app_admin, :email, :password, :password_confirmation, :level_authority, :admin_level_authority
 
   index do
     selectable_column
     id_column
     column :name
     column :email
-    column :admin
-    column :level
-    column :admin_level
+    column :app_admin
+    column :level_authority
+    column :admin_level_authority
     column :work_phone
     actions
   end

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GesIn</title>
+  <title>ThoughTrack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+  <!--Iconos-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
   <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://labs.abeautifulsite.net/jquery-minicolors/jquery.minicolors.js"></script>
+  
+  <!--Colores tickets-->
+  <script src="//labs.abeautifulsite.net/jquery-minicolors/jquery.minicolors.js"></script>
+  
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
+
 </head>
 <body>
   <% if user_signed_in? %>
   <header class= "headerfix" data-role="header">
     <div class="wrapper">   
         <div class = "logo">  
-            <%= link_to "GesIn", home_index_path%>
+            <%= link_to "Thoughtrack", home_index_path%>
         </div> 
         <nav> 
         <% if user_signed_in? %>
