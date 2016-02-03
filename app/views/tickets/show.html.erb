@@ -52,7 +52,7 @@
 
 <div class="field ">
     <%@ticket.comments.each do |comment|%>
-    <div style="font-size: 15px;"> <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
+    <div class="border-comment" style="font-size: 15px;"> <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
   </br>
     <%end%>
     <h2 class="entry-content center" id="text_new_comment"> New Comment</h2>
