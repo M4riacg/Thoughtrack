@@ -9,7 +9,7 @@
       </button>
     </div>
   </div>
-        <p><strong class="entry-content-gray">Code:</strong> <label style="font-size: 16px;"><%= @ticket.id%> <%= @ticket.level%></label></p>
+        <p><strong class="entry-content-gray">Code:</strong> <label style="font-size: 16px;"><%= @ticket.id%></label></p>
         <p><strong class="entry-content-gray">Created by:</strong><label style="font-size: 16px;"><%=@ticket.user.name%></label></p>
         <p><strong class="entry-content-gray">Open date:</strong> <label style="font-size: 16px;"><%=@ticket.created_at.strftime("%d %B %Y")%></label></p>
         <strong class="entry-content-gray">Responsible:</strong> <label style="font-size: 16px;"><%= @tecnic.name%></label>
@@ -76,8 +76,13 @@
 
   <%if(current_user.id != @ticket.tecnic_id)%>
   <script type="text/javascript">
+    $('#edit_button').hide();
+    $('#new_comment').hide();
+    $('#text_new_comment').hide();
+    $('#upgrade_button').hide();
     $('#more_priority_button').hide();
     $('#less_priority_button').hide();
+    $('#proc_button').hide();
     $('#close_button').hide();
   </script>
   <%end%>

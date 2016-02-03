@@ -14,7 +14,7 @@
   <div class="row">
     <% group.compact.each do |ticket| %>
       <div class="col-md-4">
-        <div class="well" style="background: <%=  @priority.find(ticket.priority_id).color%>">
+        <div class="well" style="background: <%=  @priority.find(ticket.priority_id).color%>;" id="well_ticket" >
         <h2 class="entry-subtitle"><%= link_to ticket.id, ticket %> - <%= link_to ticket.title, ticket %></h2>
         <p class="content-ticket"><%= ticket.content %> <p>
       </div>
@@ -31,5 +31,8 @@
    <% end %>
 </p>
 
-
-
+<%if @ticket.tecnic_id == current_user.id%>
+  <script type="text/javascript">
+  $('#well_ticket').style.border = "thin solid gray";
+  </script>
+<%end%>
