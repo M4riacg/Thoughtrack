@@ -34,10 +34,8 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-collapse collapse in " aria-expanded="true">
-      <ul class="nav navbar-nav">
-        <li class="active"><a>Logged in as <strong><%= current_user.name%></strong></a></li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a>Logged in as <strong><%= current_user.name%></strong></a></li>
         <li> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></li>
         <li> <%= link_to "log out", destroy_user_session_path, method: :get %></li>
       </ul>
