@@ -4,8 +4,15 @@ class TicketsController < ApplicationController
 
   # GET /tickets
   # GET /tickets.json
-  def index
-    @priority = Priority.all
+def index
+  if params[:filterrific]
+  @filterrific = initialize_filterrific(
+    Ticket,
+    params[:filterrific]
+  ) or return
+  @tickets = @filterrific.find.page(params[:page])
+end
+@priority = Priority.all
     if params[:search]
       @tickets = Ticket.search(params[:search]).order("created_at DESC")
     else
@@ -15,7 +22,8 @@ class TicketsController < ApplicationController
         @tickets = Ticket.where("status_id != ?", 3).order(sort_column + " " + sort_direction)
       end
     end
-  end
+
+end
 
   # GET /tickets/1
   # GET /tickets/1.json

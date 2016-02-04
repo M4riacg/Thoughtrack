@@ -21,7 +21,6 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: localhost
-  port: 5432
 
 development:
   <<: *default
@@ -80,8 +79,4 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: thoughtrack_production
-  username: thoughtrack
-  password: <%= ENV['THOUGHTRACK_DATABASE_PASSWORD'] %>
+

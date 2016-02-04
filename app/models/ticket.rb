@@ -5,6 +5,16 @@ class Ticket < ActiveRecord::Base
   has_many :comments
 
   def self.search(query)
-    where("id like ?", "%#{query}%") 
+    where("id = ?", "#{query}") 
   end
+
+  filterrific(
+  default_filter_params: { sorted_by: 'priority_id' },
+  available_filters: [
+    :sorted_by,
+    :search_query,
+    :with_title,
+    :with_created_at_gte
+  ]
+)
 end
