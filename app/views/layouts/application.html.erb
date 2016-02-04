@@ -23,21 +23,28 @@
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <div class="navbar-brand"><%= link_to "Thoughtrack", home_index_path%></div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <% if user_signed_in? %>
+        <span class="icon-bar"> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></span>
+        <span class="icon-bar"> <%= link_to "log out", destroy_user_session_path, method: :get %></span>
+        <% end %>
+      </button>
+      <div><%= link_to "Thoughtrack", home_index_path%></div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li>Logged in as <strong><%= current_user.name%></strong></li>
-          <li><%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></li>
-          <li><%= link_to "log out", destroy_user_session_path, method: :get %></li>
+        </nav>
+        <li> Logged in as <strong><%= current_user.name%></strong></li>
+        <li> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></li>
+        <li> <%= link_to "log out", destroy_user_session_path, method: :get %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-  </nav>
   <%end%>
 
 <div class= "container"> 
