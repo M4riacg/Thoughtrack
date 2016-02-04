@@ -39,8 +39,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a>Logged in as <strong><%= current_user.name%></strong><span class="sr-only">(current)</span></a></li>
         <li><i class="fa fa-home fa-lg back"> <%= link_to "Home", root_path %> </i></li>
-        <li><i class="fa fa-cog"> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %> </i></li>
-        <li><i class="fa fa-sign-out"><%= link_to "Log out", destroy_user_session_path, method: :get %></i></li>
+        <li><i class="fa fa-cog fa-lg back"> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %> </i></li>
+        <li><i class="fa fa-sign-out fa-lg back"><%= link_to "Log out", destroy_user_session_path, method: :get %></i></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
