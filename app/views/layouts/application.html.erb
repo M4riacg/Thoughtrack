@@ -19,9 +19,9 @@
 </head>
 <body>
   <% if user_signed_in? %>
-  <header class= "headerfix" data-role="header">
-    <div class="wrapper">   
-        <div class = "logo">  
+  <header class= "navbar navbar-default navbar-fixed-top" data-role="header">
+    <div class="container">   
+        <div class = "navbar-header">  
             <%= link_to "Thoughtrack", home_index_path%>
         </div> 
         <nav> 
@@ -36,7 +36,7 @@
   <%end%>
 
 
-<div id= "content" class= "wrapper" data-role="main"> 
+<div id= "content" class= "container" data-role="main"> 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
