@@ -37,7 +37,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        </nav>
         <li> Logged in as <strong><%= current_user.name%></strong></li>
         <li> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></li>
         <li> <%= link_to "log out", destroy_user_session_path, method: :get %></li>
