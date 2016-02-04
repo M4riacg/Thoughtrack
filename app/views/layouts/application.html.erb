@@ -38,10 +38,10 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a>Logged in as <strong><%= current_user.name%></strong><span class="sr-only">(current)</span></a></li>
-        <li><a><i class="fa fa-home fa-lg header-icon" style="color: #5DC1B9;"><%= link_to "Home", root_path %></a></i></li>
+        <li><a><i class="fa fa-home fa-lg header-icon" style="color: #5DC1B9;"><%= link_to "Home", root_path %></i></a></li>
         <%if current_user.app_admin?%>
         <li class="header-icon" style="color: #5DC1B9;"><a><i class="fa fa-cog fa-lg"> <%= link_to "Admin Panel", admin_users_path %> </i></a></li><%end%>
-        <li class="header-icon" style="color: #5DC1B9;"><a><i class="fa fa-sign-out fa-lg"><%= link_to "Log out", destroy_user_session_path, method: :get %></a></i></li>
+        <li class="header-icon" style="color: #5DC1B9;"><a><i class="fa fa-sign-out fa-lg"><%= link_to "Log out", destroy_user_session_path, method: :get %></i></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
