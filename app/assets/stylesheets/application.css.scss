@@ -25,6 +25,18 @@ html, body {
   padding: 0;
 }
 
+.border-comment{
+  background-color:#eee;
+  border: 1px solid rgba(136, 136, 136, 0.32);
+  border-radius:3px;
+  padding: 7px;
+}
+
+.background-login{
+  background-color: white;
+  position: absolute;
+} 
+
 .background-turquesa {
   background-color: #a6fbed;
   color: #696969;
@@ -299,14 +311,3 @@ header nav a:hover { /*rodear elementos header*/
   height: 30px;
 }
 
-.border-comment{
-  background-color:#eee;
-  border: 1px solid rgba(136, 136, 136, 0.32);
-  border-radius:3px;
-  padding: 7px;
-}
-
-.background-login{
-  background-color: white;
-  position: absolute;
-} 
