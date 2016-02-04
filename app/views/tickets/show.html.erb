@@ -10,7 +10,7 @@
   </div>
         <p><strong class="entry-content-gray">Code:</strong> <label style="font-size: 16px;"><%= @ticket.id%></label></p>
         <p><strong class="entry-content-gray">Created by:</strong><label style="font-size: 16px;"><%=@ticket.user.name%></label></p>
-        <p><strong class="entry-content-gray">Open date:</strong> <label style="font-size: 16px;"><%=@ticket.created_at.strftime("%I:%M %d %B %Y")%></label></p>
+        <p><strong class="entry-content-gray">Open date:</strong> <label style="font-size: 16px;"><%=@ticket.created_at.strftime("%I:%M, %d %B %Y")%></label></p>
         <strong class="entry-content-gray">Responsible:</strong> <label style="font-size: 16px;"><%= @tecnic.name%></label>
         <b style="padding-left: 10px;"></b>
         <button class="btn background-turquesa btn-md center" style="font-size: 16px;" id="upgrade_button">
