@@ -1,3 +1,4 @@
+# Este fichero permite definir el contenido que se desea introducir en la base de datos de forma automática.
 User.create!(:email => 'admin@ttrack.com', :password => 'admin123', :password_confirmation => 'admin123', :app_admin => 'true', :name => 'Admin', :level_authority => '3', :admin_level_authority =>'true')
 User.create!(:email => 'tecnico@ttrack.com', :password => 'tecnico123', :password_confirmation => 'tecnico123', :app_admin => 'false', :name => 'Tecnico', :level_authority => '2', :admin_level_authority =>'true')
 User.create!(:email => 'basico@ttrack.com', :password => 'basico123', :password_confirmation => 'basico123', :app_admin => 'false', :name => 'Basico', :level_authority => '1', :admin_level_authority =>'true')

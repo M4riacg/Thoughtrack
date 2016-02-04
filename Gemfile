@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
-gem 'filterrific'
-
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 
