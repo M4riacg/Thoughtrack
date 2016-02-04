@@ -1,6 +1,8 @@
 <b>Sistema de seguimiento de incidentes</b>
 
 https://thoughtrack.herokuapp.com/
+email: test@ttrack.com
+password: testt123
 
 Si se desea obtener el codigo fuente de la aplicación y poderlo ejecutarlo en local se deben seguir los siguentes pasos:
 1. git clone git://github.com/M4riacg/Thoughtrack.git
