@@ -53,7 +53,7 @@
 <div class="field ">
     <%@ticket.comments.each do |comment|%>
     <div class="border-comment" style="font-size: 15px;"> 
-        <p> <label><%=comment.created_at.strftime("%d %B %Y")%></label></p>
+        <p><label><%=comment.created_at.strftime("%d %B %Y")%></label></p>
 
       <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
   </br>
