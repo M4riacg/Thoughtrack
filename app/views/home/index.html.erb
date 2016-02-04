@@ -8,7 +8,7 @@
 <i class="fa fa-ticket fa-lg back"><%= link_to 'Tickets', tickets_path %></i>
 </h2>
 <h2 class="entry-content">
-<i class="fa fa-pencil fa-lg back"><%= link_to 'Edit Priorities', priorities_path if current_user.app_admin? %></i>
+<%if current_user.app_admin?%><i class="fa fa-pencil fa-lg back"><%= link_to 'Edit Priorities', priorities_path%></i><%end%>
 </h2>
 </div>
 <div class="col-md-6">
