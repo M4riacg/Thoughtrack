@@ -33,7 +33,15 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="navbar-collapse collapse in " aria-expanded="true">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>Logged in as <strong><%= current_user.name%></strong></a></li>
+            <li> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></li>
+            <li> <%= link_to "log out", destroy_user_session_path, method: :get %></li>
+          </ul>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a>Logged in as <strong><%= current_user.name%></strong></a></li>
         <li> <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %></li>
