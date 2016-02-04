@@ -6,6 +6,5 @@ Si se desea obtener el codigo fuente de la aplicación y poderlo ejecutarlo en 
 1. git clone git://github.com/M4riacg/Thoughtrack.git
 2. bundle install && rake db:migrate
 3. Si se desea cambiar los usuarios iniciales y/o prioridades etc, se debe acceder al fichero seeds.rb y editarlo.
-Seeds.rb es una manera convencional para añadir datos de semillas para su aplicación.
 4. rake db:seed
 5. rails s
