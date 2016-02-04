@@ -1,4 +1,4 @@
-<i class="fa fa-chevron-left fa-lg back left"> <%= link_to 'Back', tickets_path %></i>
+<i class="fa fa-chevron-left fa-lg back left"> <label style="font-family: monospace;"><%= link_to 'Back', tickets_path %></label></i>
   <div class="ticket-size">
     <div class="row">
      <h1 class="entry-title col-md-9"><%= @ticket.title %></h1>
@@ -10,7 +10,7 @@
   </div>
         <p><strong class="entry-content-gray">Code:</strong> <label style="font-size: 16px;"><%= @ticket.id%></label></p>
         <p><strong class="entry-content-gray">Created by:</strong><label style="font-size: 16px;"><%=@ticket.user.name%></label></p>
-        <p><strong class="entry-content-gray">Open date:</strong> <label style="font-size: 16px;"><%=@ticket.created_at.strftime("%d %B %Y")%></label></p>
+        <p><strong class="entry-content-gray">Open date:</strong> <label style="font-size: 16px;"><%=@ticket.created_at.strftime("%I:%M %d %B %Y")%></label></p>
         <strong class="entry-content-gray">Responsible:</strong> <label style="font-size: 16px;"><%= @tecnic.name%></label>
         <b style="padding-left: 10px;"></b>
         <button class="btn background-turquesa btn-md center" style="font-size: 16px;" id="upgrade_button">
@@ -53,7 +53,7 @@
 <div class="field ">
     <%@ticket.comments.each do |comment|%>
     <div class="border-comment" style="font-size: 15px;"> 
-        <p><label><%=comment.created_at.strftime("%d %B %Y")%></label></p>
+        <p><label><%=comment.created_at.strftime("%I:%M %d %B %Y")%></label></p>
       <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
   </br>
     <%end%>
