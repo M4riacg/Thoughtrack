@@ -52,7 +52,10 @@
 
 <div class="field ">
     <%@ticket.comments.each do |comment|%>
-    <div class="border-comment" style="font-size: 15px;"> <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
+    <div class="border-comment" style="font-size: 15px;"> 
+        <p><strong class="entry-content-gray">Open date:</strong> <label><%=@comment.created_at.strftime("%d %B %Y")%></label></p>
+
+      <b><%= comment.user.name%>:</b> <%= comment.content%> </div>
   </br>
     <%end%>
     <h2 class="entry-content center" id="text_new_comment"> New Comment</h2>
