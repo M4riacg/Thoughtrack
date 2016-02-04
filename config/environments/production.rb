@@ -14,9 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.cache_classes = true config.serve_static_assets = true
-  config.assets.compile = true config.assets.digest = true
-
+  config.assets.precompile += ['static_pages.css']
 
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
@@ -34,7 +32,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  #config.assets.compile = false
+  config.assets.compile = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
