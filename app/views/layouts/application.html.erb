@@ -39,21 +39,6 @@
   </div><!-- /.container-fluid -->
   </nav>
 
-    <div class="container">   
-        <div class = "navbar-header logo">  
-            <%= link_to "Thoughtrack", home_index_path%>
-        </div> 
-        <nav> 
-        <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.name%></strong>
-              <%= link_to "Admin Panel", admin_users_path if current_user.app_admin? %>
-              <%= link_to "log out", destroy_user_session_path, method: :get %>
-        <% end %>
-        </nav>
-    </div>
-  <%end%>
-
-
 <div class= "container"> 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
