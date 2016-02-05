@@ -87,6 +87,8 @@
     $('#proc_button').hide();
     $('#close_button').hide();
   </script>
+  <%elsif (current_user.admin_level_authority != true)%>
+    $('#edit_button').hide();
   <%end%>
   <%end%>
 
