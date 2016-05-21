@@ -8,7 +8,8 @@ Para visualizar la app: https://thoughtrack.herokuapp.com/
 
 Si se desea obtener el codigo fuente de la aplicación y poderlo ejecutarlo en local se deben seguir los siguentes pasos:
 1. git clone git://github.com/M4riacg/Thoughtrack.git
-2. bundle install && rake db:migrate
-3. Si se desea cambiar los usuarios iniciales y/o prioridades etc, se debe acceder al fichero seeds.rb y editarlo.
-4. rake db:seed
-5. rails s
+2. bundle install
+3. bundle exec rake db:create && rake db:migrate
+4. Si se desea cambiar los usuarios iniciales y/o prioridades etc, se debe acceder al fichero seeds.rb y editarlo.
+5. rake db:seed
+6. rails s
