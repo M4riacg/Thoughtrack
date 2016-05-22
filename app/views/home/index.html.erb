@@ -1,29 +1,24 @@
-<h1 class="entry-title">Welcome to Thoughtrack</h1>
+<h1 class="entry-title Montserrat">Welcome to Thoughtrack</h1>
 
-  <div class="row">
+<div class="row text-center">
 
-<div class="col-md-6">
+	<div class="col-md-6">
 
-<h2 class="entry-content">
-<i class="fa fa-ticket fa-lg back"><%= link_to 'All Tickets', tickets_path %></i>
-</h2>
+		<h2 class="entry-content">
+			<i class="fa fa-ticket fa-lg back"><label class="Montserrat"><%= link_to 'All Tickets', tickets_path %></label></i>
+		</h2>
 
-<h2 class="entry-content">
-<i class="fa fa-times fa-lg back"><%= link_to 'Closed Tickets', home_path(1)%></i>
-</h2>
-</div>
-<div class="col-md-6">
-
-
-<h2 class="entry-content">
-<i class="fa fa-plus fa-lg back"><%= link_to 'New Ticket', new_ticket_path %></i>
-</h2>
-<h2 class="entry-content">
-<%if current_user.app_admin?%><i class="fa fa-pencil fa-lg back"><%= link_to 'Edit Priorities', priorities_path%></i><%end%>
-</h2>
-
-
-
-</div>
+		<h2 class="entry-content">
+			<i class="fa fa-times fa-lg back"><label class="Montserrat"><%= link_to 'Closed Tickets', home_path(1)%></label></i>
+		</h2>
+	</div>
+	<div class="col-md-6">
+		<h2 class="entry-content">
+			<i class="fa fa-plus fa-lg back"><label class="Montserrat"><%= link_to 'New Ticket', new_ticket_path %></label></i>
+		</h2>
+		<h2 class="entry-content">
+			<%if current_user.app_admin?%><i class="fa fa-pencil fa-lg back"><label class="Montserrat"><%= link_to 'Edit Priorities', priorities_path%></label></i><%end%>
+		</h2>
+	</div>
 </div>
 

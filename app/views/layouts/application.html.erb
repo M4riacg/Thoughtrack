@@ -11,6 +11,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!--Colores tickets-->
   <script src="https://cdn.jsdelivr.net/jquery.minicolors/2.1.2/jquery.minicolors.min.js"></script>
+
+  <!--Letra titulos-->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,50 +22,49 @@
 </head>
 <body>
   <% if user_signed_in? %>
-<nav class="navbar navbar-default navbar-static-top background-turquesa">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbart" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="navbar-brand"><%= link_to "Thoughtrack", home_index_path%></div>
-    </div>
+  <nav class="navbar navbar-default navbar-static-top background-turquesa">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbart" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand Montserrat"><%= link_to "Thoughtrack", home_index_path%></div>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div id="navbart" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a>Logged in as <strong><%= current_user.name%></strong><span class="sr-only">(current)</span></a></li>
-        <li><i class="fa fa-home fa-lg header-icon"><label class="letter" style="  padding-top: 15px;"><%= link_to "Home", root_path %></label></i></li>
-        <%if current_user.app_admin?%><li class="header-icon"><i class="fa fa-cog fa-lg"><label class="letter" style="  padding-top: 15px;"> <%= link_to "Admin Panel", admin_users_path %></label> </i></li><%end%>
-        <li class="header-icon"><i class="fa fa-sign-out fa-lg"><label class="letter" style="  padding-top: 15px;"><%= link_to "Log out", destroy_user_session_path, method: :get %></label></i></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
-</nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div id="navbart" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right vh">
+          <li><a>Logged in as <strong><%= current_user.name%></strong><span class="sr-only">(current)</span></a></li>
+          <li><i class="fa fa-home fa-lg header-icon"><label class="letter Montserrat"><%= link_to "Home", root_path %></label></i></li>
+          <%if current_user.app_admin?%><li class="header-icon"><i class="fa fa-cog fa-lg"><label class="letter Montserrat"> <%= link_to "Admin Panel", admin_users_path %></label> </i></li><%end%>
+          <li class="header-icon"><i class="fa fa-sign-out fa-lg"><label class="letter Montserrat"><%= link_to "Log out", destroy_user_session_path, method: :get %></label></i></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </nav>
   <%end%>
 
 
 
-
-<div class= "container"> 
-  <% if notice %>
+  <div class= "container"> 
+    <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
+    <% end %>
+    <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+    <% end %>
     <%= yield %>
-</div>
+  </div>
 
-<footer>
-</footer>
-<script type="text/javascript">$('#priority_color').minicolors({theme: 'bootstrap'});</script>
+  <footer>
+  </footer>
+  <script type="text/javascript">$('#priority_color').minicolors({theme: 'bootstrap'});</script>
 
 </body>
 </html>

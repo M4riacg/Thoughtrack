@@ -1,12 +1,12 @@
-<i class="fa fa-chevron-left fa-lg back left"> <%= link_to 'Back', home_index_path %></i>
+<i class="fa fa-chevron-left fa-lg back left"><label class="Montserrat"> <%= link_to 'Back', :back %></lable></i>
 
 <h1 class="entry-title center">Listing Tickets</h1>
-<h2 class="entry-content center"><%= link_to 'New Ticket', new_ticket_path %></h2>
+<h2 class="entry-content center Montserrat"><%= link_to 'New Ticket', new_ticket_path %></h2>
 
-<p class="order-by right">Order by: 
-  <ins class="order-by-elements"> <%=sortable "title" %> </ins>
-  <ins class="order-by-elements"> <%=sortable "priority_id"%> </ins> 
-  <ins class="order-by-elements"> <%=sortable "created_at"%> </ins>
+<p class="order-by right Montserrat">Order by: 
+  <ins class="order-by-elements"> <%=sortable "title" %></ins>
+  <ins class="order-by-elements"> <%=sortable "priority_id"%></ins> 
+  <ins class="order-by-elements"> <%=sortable "created_at"%></ins>
 </p>
 
 
