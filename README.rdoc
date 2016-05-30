@@ -1,6 +1,6 @@
 <b>Sistema de seguimiento de incidentes</b>
 
-Para visualizar la app: https://thoughtrack.herokuapp.com/
+Para visualizar la app: https://thoughtrack.herokuapp.com/users/sign_in
 
 - email: test@ttrack.com
 
