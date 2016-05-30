@@ -17,6 +17,9 @@ gem 'bootstrap_form'
 # FontAwesom
 gem 'font-awesome-rails', '~> 4.5'
 
+#Rails TestCase classes
+gem "minitest-rails"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record

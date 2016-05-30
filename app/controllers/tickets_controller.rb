@@ -20,10 +20,14 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.json
   def show
-    @tecnic = User.find(@ticket.tecnic_id)
-    @priority = Priority.find(@ticket.priority_id)
-    @status = Status.find(@ticket.status_id)
-    @comment = Comment.new
+    if(current_user.level_authority < 2 && @ticket.tecnic_id != current_user.id)
+      deny_access_ticket
+    else
+      @tecnic = User.find(@ticket.tecnic_id)
+      @priority = Priority.find(@ticket.priority_id)
+      @status = Status.find(@ticket.status_id)
+      @comment = Comment.new
+    end
   end
 
   # GET /tickets/new
@@ -33,6 +37,9 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1/edit
   def edit
+    if(current_user.level_authority < 2)
+      deny_access_edit_ticket
+    end
   end
 
   # POST /tickets
@@ -164,5 +171,17 @@ class TicketsController < ApplicationController
 
     def sort_column
       Ticket.column_names.include?(params[:sort]) ? params[:sort] : "title"
+    end
+
+    def deny_access_ticket
+      redirect_to tickets_path, :notice => "You do not have permission to see the ticket" and return
+    end
+
+    def deny_access_ticket
+      redirect_to tickets_path, :notice => "You do not have permission to create ticket" and return
+    end
+
+    def deny_access_edit_ticket
+      redirect_to @ticket, :notice => "You do not have permission to edit the ticket" and return
     end
 end

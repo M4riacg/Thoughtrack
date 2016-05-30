@@ -4,8 +4,35 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+#one: {}
 # column: value
 #
-two: {}
+#two: {}
 #  column: value
+
+
+
+default:
+  email: 'default@example.com'
+  name: "User name"
+  work_phone: '971435472'
+  level_authority: '1'
+  admin_level_authority: true
+  encrypted_password: <%= encrypted_password %>
+
+
+level1:
+  email: 'defaultAdmin@example.com'
+  name: "Admin name"
+  work_phone: '971435471'
+  level_authority: '1'
+  admin_level_authority: true
+  encrypted_password: <%= encrypted_password %>
+
+level3:
+  email: 'defaultClient@example.com'
+  name: "Client name"
+  work_phone: '971435473'
+  level_authority: '3'
+  admin_level_authority: true
+  encrypted_password: <%= encrypted_password %>
